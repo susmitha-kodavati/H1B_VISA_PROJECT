@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>H1-B Visa</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='bootstrap.css') }}"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <style type="text/css">
+    html{
+      background-image: linear-gradient(to bottom right, #b1f7ba, #e8f0ec);
+    }
+    body{
+      background-color: linen;
+    }
+  </style>
+  <body>
+   <div class="wrapper">
+    <div class="container">
+      <br>
+      <div class="text-center">
+        <img src="{{url_for('static', filename='passport.png')}}">
+      </div>
+      <br>
+      <h2 class="text-center">H1-B Visa Prediction</h2>
+      <br>
+      <hr/>
+      <form action="/index" method="POST">
+        <div class="container">
+          <div class="row">
+            <div class="col-4">
+              <div class="form-group">
+              <label for="feedback1">Enter your Profession Name</label>
+              <input type="float" required name="feedback1" class="form-control" placeholder="Enter Social name">
+              <br/>
+              <label for="feedback2">Enter your Job Title</label>
+              <input type="float" required name="feedback2" class="form-control" placeholder="Enter Job title">
+              <br/>
+              <label for="feedback3">Are you willing stay for the complete duration?</label>
+              <select class="custom-select" name="feedback3" required>
+                <option value="">Choose a Level</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+              <br/>
+              <label for="feedback4">Enter your Prevailing wage</label>
+              <input type="float" required name="feedback4" class="form-control" placeholder="Enter Prevailing wage">
+              <br/>
+              <label for="feedback5">Enter the year you applied </label>
+              <input type="float" required name="feedback5" class="form-control" placeholder="Enter year">
+              <br/>
+              <label for="feedback6">Select a purpose of the application </label>
+              <select class="custom-select" name="feedback6" required>
+                <option value="">Choose a Level</option>
+                <option value="1">university</option>
+                <option value="0">Non-university</option>
+              </select>
+              <br/>
+              <label for="feedback7">Enter your state</label>
+              <input type="float" required name="feedback7" class="form-control" placeholder="Enter state">
+              <br/>
+            <br/>
+            </div>
+          </div>
+
+
+        <br>
+        <div class="container">
+          <div class="row">
+            <div class="col-4">
+              <button class="btn btn-primary btn-block" style="background-color: #abe342;" type="submit">Predict</button>
+            </div>
+            <div class="col-4">
+              <a class="btn btn-danger btn-block" href="/">Clear</a>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    </div>
+
+
+
+    <script src="{{ url_for('static', filename='bootstrap.js') }}"></script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      href="{{ url_for('static', filename='bootstrap.css') }}"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
+    <title>Result</title>
+    <style type="text/css">
+      html{
+      background-image: linear-gradient(to bottom right, #8CA6DB, #8CA6DB);
+    }
+    body{
+      background-color: transparent !important;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <br>
+      <div class="text-center">
+        <img src="{{url_for('static', filename='passport.png')}}">
+      </div>
+      <h2 class="text-center">H1-B Prediction</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Profession</th>
+            <th scope="col">Job title</th>
+            <th scope="col">Stay for full duration</th>
+            <th scope="col">Prevailing Wage</th>
+            <th scope="col">Year of application</th>
+            <th scope="col">University/Non-University</th>
+            <th scope="col">State</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            {% for data in to_predict %}
+            <td>{{ data }}</td>
+            {% endfor %}
+          </tr>
+        </tbody>
+      </table>
+
+      <h4 style="font-size: x-large;color: brown;" class="svm"><center>{{ rf_result }}</center> </h3>
+    </div>
+  </body>
+</html>
